@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Register with JWT</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="full-screen-container">
+        <div class="login-container">
+            <h1 class="login-title">Welcome</h1>
+            <h2 class="pop-up">Profile Created!</h2>
+            <form class="form register-form">
+                <div class="input-group visible">
+                    <label for="username">Username:-</label>
+                    <input type="text" id="username" name="username" required placeholder="Min 1 Charater - 20 Charaters." />
+                </div>
+
+                <div class="input-group visible">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="emailId" required placeholder="Must Include @ symbol."/>
+                </div>
+
+                <div class="input-group visible">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required placeholder="Must be 8 letters length."/>
+                </div>
+
+                <button type="submit" class="login-button">Register</button>
+            </form>
+
+            <div class="footer">
+                <p>Already registered?</p>
+                <a href="/">Click to login</a>
+            </div>
+        </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    
+    <script src="register.js"></script>
+</body>
+</html>

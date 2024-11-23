@@ -1,0 +1,171 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --hsl: 242.9,100%,95.9%;
+    --error-hsl: 0, 60%, 50%;
+    --success-hsl: 100, 65%, 50%;
+}
+
+body {
+    margin: 0;
+}
+.full-screen-container {
+    background: url("./image.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-title {
+    text-align: center;
+    margin: 0px;
+    color: hsl(243, 94%, 20%);
+    font-size: 2rem;
+}
+
+.login-container {
+    --color: hsl(var(--hsl), 0.4);
+    background-color: var(--color);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px 0 var(--color);
+    width: 80%; /* this is the min-width of the container of 80% of the screen width*/
+    max-width: 600px; /* these width can specify the shrinking effect to the resizing of the window*/
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.input-group label {
+    color: hsl(242.9,90%,35%);
+    font-weight: bold;
+}
+
+.input-group input {
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    background-color: hsla(242.9,100%,95.9%, 0.8);
+    outline: none;
+    border: none;
+    border-radius: 0.25em;
+    color: white;
+    font-weight: lighter;
+}
+
+.input-group.success input {
+    box-shadow: 0 0 0 1px hsl(var(--success-hsl));
+}
+
+.input-group.error input {
+    box-shadow: 0 0 0 1px hsl(var(--error-hsl));
+}
+
+.input-group input:hover {
+    /* also we can apply  border to this focus but if we use this we are adding an extra 1px to the input which make the input to move 1px from its position. so, better to use box-shadow*/
+    box-shadow: 0 0 0 1px #8d918d;
+}
+
+.input-group .msg {
+    display: none;
+    font-size: 0.75rem;
+}
+
+.visible input::placeholder {
+    color: hsl(242.9,100%,85%);
+    font-size: 16px;
+}
+
+.input-group.success .msg, .input-group.error .msg {
+    display: block;
+}
+
+.input-group.success .msg {
+    color: hsl(var(--success-hsl));
+}
+
+.input-group.error .msg {
+    color: hsl(var(--error-hsl));
+}
+
+.login-button {
+    padding: 0.5em 1em;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: hsl(242.9,90%,35%);
+    background-color: hsl(var(--hsl), 0.5);
+    border: 1px solid #8d918d;
+    border-radius: 0.25em;
+    outline: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.login-button:hover {
+    /* background-color: hsl(var(--hsl), 0.8); */
+    transform: scale(1.03);
+}
+
+.alert {
+    display: none;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.pop-up {
+    display: none;
+    text-align: center;
+    color: hsl(243, 55%, 41%);
+}
+
+.profile {
+    display: none;
+}
+
+.profile.visible {
+    width: 80%; /* this is the min-width of the container of 80% of the screen width*/
+    max-width: 600px; /* these width can specify the shrinking effect to the resizing of the window*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-transform: capitalize;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.footer a {
+    color: hsl(195.4,56.5%,6.5%);
+}
+
+.footer a:active {
+    color: white;
+}
